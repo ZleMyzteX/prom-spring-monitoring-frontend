@@ -1,3 +1,13 @@
-<h1> {{title}} </h1>
-<button (click)="testConnection()"> test connection </button>
-<p *ngIf="calledTest"> result text: {{testCallResult}}</p>
+<app-header></app-header>
+<div class="debug-info">
+  <p> current backend url: {{getBackendUriFromAppService()}} </p>
+</div>
+
+<div class="connectionTest">
+  <button mat-raised-button color="primary" (click)="testConnection()">test connection</button>
+  <button mat-raised-button color="primary" (click)="standardDelay()">get with standard delay (1000ms)</button>
+</div>
+
+<div class="result">
+  <p *ngIf="methodCalled"> <strong>result:</strong> {{testCallResult}} </p>
+</div>
